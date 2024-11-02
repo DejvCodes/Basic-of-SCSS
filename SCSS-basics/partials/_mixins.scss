@@ -1,0 +1,63 @@
+@mixin rounded($radius: 15px, $border: 10px solid $black-color) {
+  border-radius: $radius;
+  border: $border;
+}
+
+@mixin myButton {
+  @include rounded(8px, 2px solid $black-color);
+  color: rgb(255, 255, 255);
+  background: $secondary-color;
+  padding: em(9px) em(14px);
+  margin: 10px 0 5px 5px;
+  cursor: pointer;
+  outline: none;
+}
+
+@mixin textStyle {
+  font-family: 'Trebuchet MS';
+  // color: $black-color;
+  text-align: left;
+}
+
+@mixin bigText {
+  font: {
+    size: $big-font-size;
+    weight: bold;
+    family: "Verdana";
+  }
+  text-align: left;
+  // font-size: 44px;
+  // font-weight: bold;
+  // font-family: Verdana;
+}
+
+@mixin image {
+  width: 320px;
+  padding: 0;
+  margin-top: 20px;
+}
+
+// @mixin ourLinks {
+//   a {
+//     color: $secondary-color;
+//     font-style: italic;
+//     text-decoration: underline;
+//   }
+// }
+
+// vararg
+@mixin shadow($shadows...) {
+  box-shadow: $shadows;
+}
+
+@mixin pizza {
+  @if $brand == pizza {
+    @content;
+  }
+}
+
+@mixin coffe {
+  @if $brand == coffe {
+    @content;
+  }
+}

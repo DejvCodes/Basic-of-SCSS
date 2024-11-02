@@ -1,0 +1,194 @@
+@import "partials/variables";
+@import "partials/mixins";
+@import "partials/function";
+
+* {
+  padding: 10px;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+// Font-size může mít hodnoty: small, normal a big
+// Tuto proměnou je důležité držet ve stejném souboru jako je podmínka
+$font-size: small;
+
+body {
+  background: $main-color;
+
+  @if $font-size == small {
+    font-size: 16px;
+  } @else if $font-size == normal {
+    font-size: 20px;
+  } @else if $font-size == big {
+    font-size: 24px;
+  } @else {
+    background: $red-color;
+  }
+}
+
+h1, h2, p {
+  color: $text-color;
+}
+
+div {
+  display: flex;
+  gap: 30px;
+}
+
+li {
+  padding: 3px;
+  list-style: none;
+}
+
+button.alert-btn {
+  @include myButton;
+  font-size: sum(3px, 15px);
+}
+
+button.warning-btn {
+  @include myButton;
+  font-size: 1.125em;
+}
+
+p {
+  @include textStyle;
+  // font-size: $small-font-size;
+}
+
+h1 {
+  @include textStyle;
+  font-size: $medium-font-size;
+}
+
+h2 {
+  @include bigText;
+  @include pizza {
+    text-decoration: underline; 
+  };
+}
+
+img {
+  @include image;
+  @include rounded($border: 2px solid $black-color);
+  @include shadow(0 0 30px $secondary-color, 0 0 25px $black-color);
+}
+
+// @include ourLinks;
+
+// Nesting
+ul.list {
+  display: none;
+  font-size: $small-font-size;
+  font-weight: bold;
+  list-style: none;
+
+  li {
+    color: $secondary-color;
+
+    a {
+      text-decoration: none;
+    }
+  }
+}
+
+a {
+  padding: 0;
+  color: $secondary-color;
+  font-size: $small-font-size;
+  text-decoration: none;
+  transition: all 0.15s linear;
+  // Funkce transparentize
+  border-bottom: 2px solid transparentize($color: $red-color, $amount: 0.5);
+
+  @include coffe {
+    color: brown;
+    font-weight: bold;
+  }
+
+  &:hover {
+    // Funkce darken a lighten
+    // color: darken($color: $red-color, $amount: 10px);
+    color: lighten($color: $red-color, $amount: 10px);
+    border-bottom: 2px solid transparentize($color: $red-color, $amount: 0.1);
+  }
+}
+
+.normal-notification {
+  width: 220px;
+  color: $white-color;
+  background: $secondary-color;
+  font-size: $small-font-size;
+  text-align: center;
+  cursor: pointer;
+  @include rounded($radius: 8px, $border: 3px solid $secondary-color);
+}
+.error-notification {
+  // Dědění extend
+  @extend .normal-notification;
+  border: 3px solid $white-color;
+}
+
+// %test-only {
+//   font-style: italic;
+// }
+
+// .sub-title {
+//   // extend only
+//   @extend %test-only;
+//   font-size: 28px;
+// }
+
+.new-class {
+  // !optional => Pokud class existuje, tak ji pužije
+  @extend .dont-exists !optional;
+  font-size: 44px;
+}
+
+.result {
+  font-size: $math-results;
+}
+
+// ----- For cyklus -----
+// @for $i from 1 to 6 {}
+@for $i from 1 through 3 {
+  .col-#{$i} {
+    width: $i * 5em;
+    background: $secondary-color;
+    margin-bottom: 5px;
+  }
+}
+
+// ----- Each cyklus -----
+// List
+$students: david, jirka, terka;
+@each $one-student in $students {
+  .#{$one-student}-profile {
+    background-image: url("img/#{$one-student}.png");
+  }
+}
+
+// Map
+$font-size: (very-small: 7px, small: 16px, medium: 22px, large: 28px);
+@each $name, $size in $font-size {
+  .#{$name} {
+    font-size: $size;
+  }
+}
+
+// ----- While cyklus -----
+$j: 1;
+@while $j <= 5 {
+  .picture-#{$j} {
+    width: $j * 10%;
+  }
+  $j: $j + 1;
+}
+
+$k: 5;
+@while $k >= 1 {
+  .picture-#{$k} {
+    width: $k * 10%;
+    height: 300px;
+  }
+  $k: $k - 1;
+}

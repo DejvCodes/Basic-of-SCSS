@@ -1,0 +1,217 @@
+* {
+  padding: 10px;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: rgb(0, 162, 255);
+  font-size: 16px;
+}
+
+h1, h2, p {
+  color: black;
+}
+
+div {
+  display: flex;
+  gap: 30px;
+}
+
+li {
+  padding: 3px;
+  list-style: none;
+}
+
+button.alert-btn {
+  border-radius: 8px;
+  border: 2px solid rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  background: rgb(43, 0, 255);
+  padding: 0.5625em 0.875em;
+  margin: 10px 0 5px 5px;
+  cursor: pointer;
+  outline: none;
+  font-size: 18px;
+}
+
+button.warning-btn {
+  border-radius: 8px;
+  border: 2px solid rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  background: rgb(43, 0, 255);
+  padding: 0.5625em 0.875em;
+  margin: 10px 0 5px 5px;
+  cursor: pointer;
+  outline: none;
+  font-size: 1.125em;
+}
+
+p {
+  font-family: "Trebuchet MS";
+  text-align: left;
+}
+
+h1 {
+  font-family: "Trebuchet MS";
+  text-align: left;
+  font-size: 24px;
+}
+
+h2 {
+  font-size: 30px;
+  font-weight: bold;
+  font-family: "Verdana";
+  text-align: left;
+}
+
+img {
+  width: 320px;
+  padding: 0;
+  margin-top: 20px;
+  border-radius: 15px;
+  border: 2px solid rgb(0, 0, 0);
+  box-shadow: 0 0 30px rgb(43, 0, 255), 0 0 25px rgb(0, 0, 0);
+}
+
+ul.list {
+  display: none;
+  font-size: 16px;
+  font-weight: bold;
+  list-style: none;
+}
+ul.list li {
+  color: rgb(43, 0, 255);
+}
+ul.list li a {
+  text-decoration: none;
+}
+
+a {
+  padding: 0;
+  color: rgb(43, 0, 255);
+  font-size: 16px;
+  text-decoration: none;
+  transition: all 0.15s linear;
+  border-bottom: 2px solid rgba(255, 0, 0, 0.5);
+  color: brown;
+  font-weight: bold;
+}
+a:hover {
+  color: #ff3333;
+  border-bottom: 2px solid rgba(255, 0, 0, 0.9);
+}
+
+.normal-notification, .error-notification {
+  width: 220px;
+  color: white;
+  background: rgb(43, 0, 255);
+  font-size: 16px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 8px;
+  border: 3px solid rgb(43, 0, 255);
+}
+
+.error-notification {
+  border: 3px solid white;
+}
+
+.new-class {
+  font-size: 44px;
+}
+
+.result {
+  font-size: 14px;
+}
+
+.col-1 {
+  width: 5em;
+  background: rgb(43, 0, 255);
+  margin-bottom: 5px;
+}
+
+.col-2 {
+  width: 10em;
+  background: rgb(43, 0, 255);
+  margin-bottom: 5px;
+}
+
+.col-3 {
+  width: 15em;
+  background: rgb(43, 0, 255);
+  margin-bottom: 5px;
+}
+
+.david-profile {
+  background-image: url("img/david.png");
+}
+
+.jirka-profile {
+  background-image: url("img/jirka.png");
+}
+
+.terka-profile {
+  background-image: url("img/terka.png");
+}
+
+.very-small {
+  font-size: 7px;
+}
+
+.small {
+  font-size: 16px;
+}
+
+.medium {
+  font-size: 22px;
+}
+
+.large {
+  font-size: 28px;
+}
+
+.picture-1 {
+  width: 10%;
+}
+
+.picture-2 {
+  width: 20%;
+}
+
+.picture-3 {
+  width: 30%;
+}
+
+.picture-4 {
+  width: 40%;
+}
+
+.picture-5 {
+  width: 50%;
+}
+
+.picture-5 {
+  width: 50%;
+  height: 300px;
+}
+
+.picture-4 {
+  width: 40%;
+  height: 300px;
+}
+
+.picture-3 {
+  width: 30%;
+  height: 300px;
+}
+
+.picture-2 {
+  width: 20%;
+  height: 300px;
+}
+
+.picture-1 {
+  width: 10%;
+  height: 300px;
+}/*# sourceMappingURL=style.css.map */

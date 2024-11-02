@@ -1,0 +1,7 @@
+@function em($pixels, $basicValue: 16px) {
+    @return ($pixels / $basicValue) * 1em;
+}
+
+@function sum($num1, $num2) {
+  @return $num1 + $num2;
+}
