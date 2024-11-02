@@ -1,0 +1,22 @@
+// ----- Theme: light, dark -----
+$theme: dark;
+
+// For Light Theme
+// ----- Colors -----
+$body-background: #FFF;
+$header-footer-bg: #767CFF;
+$text-color: #000;
+$button-color: #5100FF;
+$ordinary-border: 2px solid $text-color;
+
+// ----- Sizes -----
+$header-height: 70px;
+$footer-height: 40px;
+
+// For Dark Theme
+@if $theme == dark {
+  $body-background: #000;
+  $text-color: #FFF;
+  $header-footer-bg: darken(#767CFF, 10%);
+  $ordinary-border: 2px solid $text-color;
+}

@@ -1,0 +1,58 @@
+@import "partials/variables";
+@import "partials/mixins";
+@import "partials/functions";
+
+* {
+  box-sizing: border-box;
+}
+body {
+  background: $body-background;
+  font-family: 'Segoe UI', sans-serif;
+  @include container;
+}
+
+header {
+  height: $header-height;
+  @include header-footer-style;
+
+  h1 {
+    font: {
+      size: 36px;
+    }
+  }
+}
+
+footer {
+  height: $footer-height;
+  @include header-footer-style;
+}
+
+.about-us {
+  h2, p {
+    color: $text-color;
+  }
+}
+
+.theme {
+  display: inline-block;
+  @include theme-box;
+
+  img {
+    width: 70%;
+    display: block;
+    margin: 0 auto;
+    @include radius(8px);
+  }
+
+  a {
+    width: 100px;
+    display: block;
+    text-align: center;
+    margin: 10px auto;
+    @include button;
+
+    &:hover {
+      background: lighten($button-color, 10%);
+    }
+  }
+}
